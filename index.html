@@ -23,7 +23,7 @@
 
       const mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
       var now = new Date().getTime();
-      alert('start 5');
+      alert('start 6');
       if (mobile) {
         const userAgent = navigator.userAgent.toLowerCase();
         if (userAgent.search("android") > -1) {
@@ -35,13 +35,12 @@
           location.href = "hyperlounge://hyperreport";
 
         } else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)) {
-
-          location.href = "hyperlounge://hyperreport";
-
           setTimeout(function () {
             alert("open app store")
             location.href = "https://apps.apple.com/app/1576661686";
           }, 2000);
+
+          location.href = "hyperlounge://hyperreport";
 
         } else { currentOS = "else" }
 
