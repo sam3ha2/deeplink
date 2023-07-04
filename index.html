@@ -23,7 +23,7 @@
 
       const mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
       var now = new Date().getTime();
-      alert('start 2');
+      alert('start 3');
       if (mobile) {
         const userAgent = navigator.userAgent.toLowerCase();
         if (userAgent.search("android") > -1) {
@@ -51,7 +51,7 @@
         setTimeout(function () {
           window.close();
           // window.history.go(-1);
-        }, 2000)
+        }, 5000)
 
       } else if (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints && navigator.maxTouchPoints > 1) {
 
