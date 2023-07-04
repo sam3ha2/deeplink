@@ -23,7 +23,7 @@
 
       const mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
       var now = new Date().getTime();
-      alert('start 4');
+      alert('start 5');
       if (mobile) {
         const userAgent = navigator.userAgent.toLowerCase();
         if (userAgent.search("android") > -1) {
@@ -39,19 +39,18 @@
           location.href = "hyperlounge://hyperreport";
 
           setTimeout(function () {
-            if (new Date().getTime() - now < 1000) {
-              location.href = "https://apps.apple.com/app/1576661686";
-            }
-          }, 500);
+            alert("open app store")
+            location.href = "https://apps.apple.com/app/1576661686";
+          }, 2000);
 
         } else { currentOS = "else" }
 
         window.focus();
 
-        // setTimeout(function () {
-        //   window.close();
-        //   // window.history.go(-1);
-        // }, 3000)
+        setTimeout(function () {
+          window.close();
+          // window.history.go(-1);
+        }, 3000)
 
       } else if (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints && navigator.maxTouchPoints > 1) {
 
