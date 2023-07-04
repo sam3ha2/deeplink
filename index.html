@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하이퍼라운지 | 하이퍼리포트 앱 전환</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2B34FPG49R"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-2B34FPG49R');
+	</script>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+
+      const mobile = (/iphone|ipad|ipod|android/i.test( navigator.userAgent.toLowerCase() ));
+      var now = new Date().getTime();
+      if (mobile)
+      {
+          const userAgent = navigator.userAgent.toLowerCase();
+          if (userAgent.search("android") > -1) {
+              currentOS = "android";
+              setTimeout( function() {
+                location.href="market://details?id=com.hyperloungemobile";
+              }, 2000);
+
+              location.href = "hyperlounge://hyperreport";
+
+          } else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1) ){
+
+              location.href = "hyperlounge://hyperreport";
+
+              setTimeout(function () {
+                if (new Date().getTime() - now < 1000) {
+                  location.href = "https://apps.apple.com/app/1576661686";
+                }
+              }, 500);
+     
+          } else { currentOS = "else"}
+
+          window.focus();
+
+          setTimeout(function(){
+            window.close();
+            window.history.go(-1);
+          },2000)
+
+      } else if (/Macintosh/i.test(navigator.userAgent) && navigator.maxTouchPoints && navigator.maxTouchPoints > 1){
+
+        location.href = "hyperlounge://hyperreport";
+
+        setTimeout(function () {
+          if (new Date().getTime() - now < 1000) {
+            location.href = "https://apps.apple.com/app/1576661686";
+          }
+        }, 500);
+
+      } else  { 
+
+        currentOS = "desktop"; 
+        alert('하이퍼리포트앱은 모바일 환경에서만 실행됩니다.');
+        location.href = '/';
+        
+      }
+  }
+
+  </script>
+</body>
+</html>
